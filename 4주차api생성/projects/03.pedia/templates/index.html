@@ -104,11 +104,7 @@
             let rows = data["movies"];
             $("#cards-box").empty();
             rows.forEach((row) => {
-              let title = row["title"];
-              let desc = row["desc"];
-              let image = row["image"];
-              let comment = row["comment"];
-              let star = row["star"];
+              let { title, desc, image, comment, star } = row;
               let star_repeat = "⭐".repeat(star);
 
               let temp_html = `<div class="col">
