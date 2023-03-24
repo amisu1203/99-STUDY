@@ -1,8 +1,8 @@
 액세스 키
-AKIAYVRSBGCCC6DMAHKR	
+AKIAYVRSBGCCETEDHSFX
 
 비밀 액세스 키
-nmBh4hhvVqbHQAG5X08YA/KWhsghRoWu7m12RXwX
+7kvEv2qC9LA/xQ9DskHvTGdn9tXLcl+B5UEqIynU
 - 터미널 준비하기 - 
 mkdir deploy (deploy라는 폴더 생성)
 cp app.py deploy/application.py (app.py를 복사해서 dep/app.py에 넣어라)
