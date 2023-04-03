@@ -1,0 +1,70 @@
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+#sform {
+  width: 586px;
+  height: 56px;
+  display: block;
+  margin-inline-start: 2px;
+  margin-inline-end: 2px;
+  padding-block-start: 0.35em;
+  padding-inline-start: 0.75em;
+  padding-inline-end: 0.75em;
+  padding-block-end: 0.625em;
+  min-inline-size: min-content;
+}
+
+#sform fieldset {
+  border: 0;
+  position: relative;
+  padding: 0;
+}
+
+.green_window {
+  position: relative;
+  width: 582px;
+  height: 52px;
+  border: 2px solid #19ce60;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.green_window #query {
+  outline: 0;
+  width: 444px;
+  height: 50px;
+  padding: 13px 15px;
+  margin: 1px;
+  border: 0;
+}
+
+#search_btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 56px;
+  background-color: #19ce60;
+  -webkit-border-radius: 0 2px 2px 0;
+  border: 0;
+  border-radius: 0 2px 2px 0;
+  cursor: pointer;
+}
+
+#search_btn .ico_search_submit {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background-position: -420px -24px;
+  background-repeat: no-repeat;
+  vertical-align: top;
+  background-image: url(https://s.pstatic.net/static/www/img/uit/sp_main_947f65.png);
+  -webkit-background-size: 442px 428px;
+  background-size: 442px 428px;
+}

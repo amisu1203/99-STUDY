@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form id="sform" name="sform" action="https://search.naver.com/search.naver" method="get" role="search">
+      <fieldset>
+        <div class="green_window" style="">
+          <!-- [AU] data-atcmp-element 에 해당하는 attribute를 추가해주세요. -->
+          <input
+            id="query"
+            name="query"
+            type="search"
+            title="검색어 입력"
+            maxlength="255"
+            class="input_text"
+            tabindex="1"
+            accesskey="s"
+            style="ime-mode: active"
+            autocomplete="off"
+            placeholder="검색어를 입력해 주세요."
+            onclick="document.getElementById('fbm').value=1;"
+            value=""
+            data-atcmp-element=""
+          />
+        </div>
+        <button id="search_btn" type="submit" title="검색" tabindex="3" class="btn_submit" onclick="window.nclick(this,'sch.action','','',event);" style="">
+          <span class="blind">검색</span>
+          <span class="ico_search_submit"></span>
+        </button>
+      </fieldset>
+    </form>
+  </body>
+</html>

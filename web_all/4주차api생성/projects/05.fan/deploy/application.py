@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 application = app = Flask(__name__)
 
+from bson import ObjectId
 from pymongo import MongoClient
 import certifi
 
@@ -26,8 +27,19 @@ def guestbook_post():
 
 @app.route("/guestbook", methods=["GET"])
 def guestbook_get():
-    all_guest = list(db.guestbook.find({},{'_id':False}))
+    all_guest = list(db.guestbook.find({}))
+    for guest in all_guest:
+        guest['_id'] = str(guest['_id']) # Convert ObjectId to string
     return jsonify({'result': all_guest})
+
+@app.route("/delete_guestbook", methods=["DELETE"])
+def guestbook_delete():
+    id_to_delete = request.form['id_give']
+    result = db.guestbook.delete_one({'_id': ObjectId(id_to_delete)})
+    if result.deleted_count == 1:
+        return jsonify({'result': 'success'})
+    else:
+        return jsonify({'result': 'fail'})
 
 if __name__ == '__main__':
    app.run()
