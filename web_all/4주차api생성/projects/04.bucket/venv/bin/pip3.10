@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/Users/am_i_su/Desktop/sparta/4주차 api 생성/projects/04.bucket/venv/bin/python3" "$0" "$@"
-' '''
+#!/Users/am_i_su/Desktop/sparta/web_all/4주차api생성/projects/04.bucket/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
