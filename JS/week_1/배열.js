@@ -93,7 +93,7 @@ console.log(sum);
 
 // 3-11. find() 메소드
 // find() 메소드는 배열의 각 요소에 대해 콜백 함수를 실행하고, 그 결과가 true인 첫 번째 요소를 반환합니다.
-let numbers = [1, 2, 3, 4, 5];
+numbers = [1, 2, 3, 4, 5];
 
 let foundNumber = numbers.find(function (number) {
   return number > 3;
