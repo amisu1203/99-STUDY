@@ -36,12 +36,13 @@ const guessNum = () => {
 // 랜덤 숫자 생성
 // sort 효율 -> 고쳐보기
 const makeNum = () => {
-  myNum = new Set();
+  myNum = new Set(); //
   while (myNum.size < 3) {
     let randomNum = Math.floor(Math.random() * 10);
-    if (myNum.size == 0 && randomNum == 0) continue;
+    // if (myNum.size == 0 && randomNum == 0) continue;
     myNum.add(randomNum);
   }
+  // [...arr] 고치기
   return Array.from(myNum).join("");
 };
 let new_num = makeNum();
