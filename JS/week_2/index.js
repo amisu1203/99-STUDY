@@ -14,18 +14,16 @@ const guessNum = () => {
   console.log(new_num);
   let b = 0;
   let s = 0;
-  // 값만 맞으면 b, 위치도 맞으면 s
-  // indexOf = 인덱스반환 / includes = 트루폴스
   for (let i = 0; i < 3; i++) {
     if (new_num.includes(user_num[i])) {
       console.log(`${i + 1}번째 값이 같다.`);
-      if (new_num[i] == user_num[i]) {
-        s += 1;
-      } else b += 1;
+      new_num[i] == user_num[i] ? (s += 1) : (b += 1);
     }
   }
-  if (s == 3) {
-    let temp_html = `<p class="txt-user-num">와! ${count_guess}번째 시도만에 성공💖 정답은 ${new_num}입니다!</p>`;
+
+  // temp_html  생성
+  if (s === 3) {
+    let temp_html = `<p class="txt-user-num">${count_guess}번째 시도만에 성공💖 정답은 ${new_num}입니다!</p>`;
     $("#con-user-nums").append(temp_html);
     $("#btn-submit").attr("disabled", true);
   } else {
@@ -36,6 +34,7 @@ const guessNum = () => {
 };
 
 // 랜덤 숫자 생성
+// sort 효율 -> 고쳐보기
 const makeNum = () => {
   myNum = new Set();
   while (myNum.size < 3) {
