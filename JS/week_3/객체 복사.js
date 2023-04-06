@@ -38,7 +38,6 @@ var copyObjectDeep = function (target) {
   if (typeof target === "object" && target !== null) {
     for (var prop in target) {
       result[prop] = copyObjectDeep(target[prop]);
-      console.log("here prop : ", prop, "result[prop] :", result[prop]);
     }
   } else {
     result = target;
@@ -62,3 +61,16 @@ obj2.b.d[1] = 3;
 
 console.log(obj);
 console.log(obj2);
+
+// 어려우신 분들은 강의를 한번 더 돌려보시기를 권장드려요 :)
+var a = 1;
+var outer = function () {
+  var inner = function () {
+    console.log(a); // 이 값은 뭐가 나올지 예상해보세요! 이유는 뭐죠? scope 관점에서!
+    var a = 3;
+  };
+  inner();
+  console.log(a); // 이 값은 또 뭐가 나올까요? 이유는요? scope 관점에서!
+};
+outer();
+console.log(a); // 이 값은 뭐가 나올까요? 마찬가지로 이유도!
