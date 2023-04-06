@@ -26,3 +26,39 @@ if (user !== user2) {
 
 console.log(user.name, user2.name);
 console.log(user === user2);
+
+// 하지만 중첩객체의 경우 얕은 복사를 사용하면 여전히 dept 안의 객체들은 주소값을 복사한다.
+// 복사한 중첩 객체의 프로퍼티 변경 시 원본의 중첩객체도 변경된다 -> 가변
+// 따라서 객체를 불변하게 하기위해 깊은 복사를 수행한다.
+
+// 깊은 복사
+
+var copyObjectDeep = function (target) {
+  var result = {};
+  if (typeof target === "object" && target !== null) {
+    for (var prop in target) {
+      result[prop] = copyObjectDeep(target[prop]);
+      console.log("here prop : ", prop, "result[prop] :", result[prop]);
+    }
+  } else {
+    result = target;
+  }
+  return result;
+};
+
+//결과 확인
+var obj = {
+  a: 1,
+  b: {
+    c: null,
+    d: [1, 2],
+  },
+};
+var obj2 = copyObjectDeep(obj);
+
+obj2.a = 3;
+obj2.b.c = 4;
+obj2.b.d[1] = 3;
+
+console.log(obj);
+console.log(obj2);
