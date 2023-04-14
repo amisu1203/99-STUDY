@@ -59,7 +59,7 @@ function solution2(a, b) {
 
   return answer;
 }
-console.log(solution2(-3, -1)); // -6
+// console.log(solution2(-3, -1)); // -6
 
 // 문제 6. 0부터 9까지의 숫자 중 일부가 들어있는 정수 배열 numbers가 매개변수로 주어집니다.
 // numbers에서 찾을 수 없는 0부터 9까지의 숫자를 모두 찾아 더한 수를 return 하도록 solution 함수를 완성해주세요.
@@ -163,29 +163,29 @@ console.log(solution2(-3, -1)); // -6
 // [1 2] + [3 4]
 // [2 3]   [5 6]
 
-function solution(arr1, arr2) {
-  var answer = [];
-  for (let i = 0; i < arr1.length; i++) {
-    let temp = [];
-    for (let j = 0; j < arr1[i].length; j++) {
-      temp.push(arr1[i][j] + arr2[i][j]);
-    }
-    answer.push(temp);
-  }
-  return answer;
-}
-console.log(
-  solution(
-    [
-      [1, 2],
-      [2, 3],
-    ],
-    [
-      [3, 4],
-      [5, 6],
-    ]
-  )
-);
+// function solution(arr1, arr2) {
+//   var answer = [];
+//   for (let i = 0; i < arr1.length; i++) {
+//     let temp = [];
+//     for (let j = 0; j < arr1[i].length; j++) {
+//       temp.push(arr1[i][j] + arr2[i][j]);
+//     }
+//     answer.push(temp);
+//   }
+//   return answer;
+// }
+// console.log(
+//   solution(
+//     [
+//       [1, 2],
+//       [2, 3],
+//     ],
+//     [
+//       [3, 4],
+//       [5, 6],
+//     ]
+//   )
+// );
 
 // 11. 함수 solution은 정수 x와 자연수 n을 입력 받아,
 // x부터 시작해 x씩 증가하는 숫자를 n개 지니는 리스트를 리턴해야 합니다.
@@ -199,16 +199,127 @@ console.log(
 // 4	3	[4,8,12]
 // -4	2	[-4, -8]
 
-function solution(x, n) {
-  var answer = [];
-  let 곱하는숫자 = x;
-  let 반복해야되는숫자 = n;
-  for (let i = 0; i < 반복해야되는숫자; i++) {
-    answer.push(곱하는숫자);
-    곱하는숫자 += x;
-  }
+// function solution(x, n) {
+//   var answer = [];
+//   let 곱하는숫자 = x;
+//   let 반복해야되는숫자 = n;
+//   for (let i = 0; i < 반복해야되는숫자; i++) {
+//     answer.push(곱하는숫자);
+//     곱하는숫자 += x;
+//   }
 
-  return answer;
-}
+//   return answer;
+// }
 
-console.log(solution(4, 3)); // [2,4,6,8,10]
+// console.log(solution(4, 3));
+
+// 07번 음양 더하기
+
+// 박지수 코드
+// function solution(absolutes, signs) {
+//   let answer = 0;
+//   for (let i = 0; i < absolutes.length; i++) {
+//     answer += signs[i] ? absolutes[i] : -1 * absolutes[i];
+//   }
+//   return answer;
+// }
+
+// 김연주 코드
+
+// function solution(absolutes, signs) {
+//   let answer = 0;
+
+//   for (i = 0; i < absolutes.length; i++) {
+//     if (signs[i]) {
+//       answer = answer + absolutes[i];
+//     } else {
+//       answer = answer - absolutes[i];
+//     }
+//   }
+
+//   return answer;
+// }
+// console.log(solution([4, 7, 12], [true, false, true])); // 9
+
+// 08번 평균 구하기
+
+// 박지수 코드
+// function solution(arr) {
+//   var answer = 0;
+//   arr.forEach((i) => {
+//     answer += i;
+//   });
+//   return answer / arr.length;
+// }
+
+// 김연주 코드
+
+// function solution(arr) {
+//   // reduce 사용시 초기값 안 주면 배열의 0번째 요소가 초기값
+//   let arry = arr.reduce((acc, cur) => acc + cur);
+//   return arry / arr.length;
+// }
+
+// 9번 핸드폰 번호
+// 박지수 코드
+
+// function solution(phone_number) {
+//   var answer = "";
+//   let len = phone_number.length;
+//   answer = "*".repeat(len - 4) + phone_number.slice(-4);
+//   return answer;
+// }
+
+// 김연주 코드
+
+// function solution(phone_number) {
+//   let numbers1 = phone_number.slice(-4);
+
+//   let numbers2 = phone_number.length - 4;
+
+//   return "*".repeat(numbers2) + numbers1;
+// }
+
+// 10번
+// 행렬의 덧셈은 행과 열의 크기가 같은 두 행렬의 같은 행, 같은 열의 값을 서로 더한 결과가 됩니다.[]
+// 2개의 행렬 arr1과 arr2를 입력받아, 행렬 덧셈의 결과를 반환하는 함수, solution을 완성해주세요.
+
+// arr1 : [[1,2],[2,3]]	arr2:[[3,4],[5,6]]	return: [[4,6],[7,9]]
+// arr1 : [[1],[2]]	arr2: [[3],[4]]	return: [[4],[6]]
+
+// console.log(
+//   solution(
+//     [
+//       [1, 2],
+//       [2, 3],
+//     ],
+//     [
+//       [3, 4],
+//       [5, 6],
+//     ]
+//   )
+// );
+
+//  arr1 : [[1,2],[2,3]]
+//  arr2:[[3,4],[5,6]]
+// function solution(arr1, arr2) {
+//   var answer = [];
+//   for (let i = 0; i < arr1.length; i++) {
+//     let temp = [];
+//     for (let j = 0; j < arr1[i].length; j++) {
+//       temp.push(arr1[i][j] + arr2[i][j]);
+//     }
+//     answer.push(temp);
+//   }
+//   return answer;
+// }
+
+// function solution(chicken) {
+//   let a = 0;
+//   while (chicken > 9) {
+//     a += Math.floor(chicken / 10);
+//     chicken = Math.floor(chicken / 10 + (chicken % 10));
+//   }
+//   return a;
+// }
+// console.log(solution(1111));
